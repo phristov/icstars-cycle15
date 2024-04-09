@@ -1,0 +1,33 @@
+<h1>Resumes</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                Person
+            </th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @for (item of resumes; track item.resumeId) {
+        <tr>
+            <td>
+                <a [routerLink]="['/resumes', item.resumeId]">
+                    {{item.person.firstName}} {{item.person.lastName}}
+                </a>
+            </td>
+        </tr>
+        } @empty {
+        <tr>
+            <td>
+                There are no items.
+            </td>
+        </tr>
+        }
+
+
+
+    </tbody>
+</table>

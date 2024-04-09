@@ -1,0 +1,24 @@
+<h1>{{resume.person.firstName}} {{resume.person.lastName}}</h1>
+
+
+<p>
+    {{resume.summary}}
+</p>
+
+
+
+<h2>Professional Experience</h2>
+<ul>
+
+    @for (item of resume.jobs; track item.jobId) {
+    <li>
+        {{item.city}}
+    </li>
+    }
+
+</ul>
+
+
+<code>
+    {{resume|json}}
+</code>
